@@ -1,5 +1,5 @@
 from flask import Flask
-from flast_sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS    #Cross origin requests
 
 app = Flask(__name__)
