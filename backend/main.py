@@ -2,8 +2,8 @@ from flask import request, jsonify
 from config import app, db
 from models import Contact
 
-
-@app.route("/contacts", methods=["Get"])  # Decorator?
+# Read
+@app.route("/contacts", methods=["GET"])  # Decorator?
 def get_contacts():
     contacts = Contact.query.all()
     json_contacts = list(map(lambda x: x.to_json(), contacts))
@@ -48,6 +48,18 @@ def update_contact(user_id):
 
     return jsonify({"message:", "User updated."}), 200
 
+# Delete
+@app.route("/delete_contact/<int:user_id>", method=["DELETE"])
+def delete_contact(user_id):
+    contact = Contact.query.get(user_id)
+
+    if not contact:
+        return jsonify({"message": "User not found"}), 404
+    
+    db.session.delete(contact)
+    db.session.commit()
+
+    return jsonify({"message": "User deleted!"}), 200
 
 if __name__ == "__main__":
     with app.app_context():
