@@ -1,10 +1,17 @@
 from config import db
 
 class Contact(db.Model):
+<<<<<<< HEAD
     id = db.Column(db.Integer, primary_key = True)
     first_name = db.Column(db.String(80), unique = False, nullable = False)
     last_name = db.Column(db.String(80), unique = False, nullable = False)
     email = db.Column(db.String(120), unique = False, nullable = False)
+=======
+    id = db.Column(db.Integer, primary_key=True)
+    first_name = db.Column(db.String(80), unique=False, nullable=False)
+    last_name = db.Column(db.String(80), unique=False, nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+>>>>>>> 54e90d7b76a11f4aec7a5038126b971854228016
 
     def to_json(self):
         return {
