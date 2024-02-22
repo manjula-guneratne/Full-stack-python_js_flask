@@ -32,7 +32,7 @@ def create_contact():
     return jsonify({"message": "User created!"}), 201
 
 # Update
-@app.route("/update_contact/<int:user_id>", method=["PATCH"])
+@app.route("/update_contact/<int:user_id>", methods=["PATCH"])
 def update_contact(user_id):
     contact = Contact.query.get(user_id)
 
@@ -49,7 +49,7 @@ def update_contact(user_id):
     return jsonify({"message:", "User updated."}), 200
 
 # Delete
-@app.route("/delete_contact/<int:user_id>", method=["DELETE"])
+@app.route("/delete_contact/<int:user_id>", methods=["DELETE"])
 def delete_contact(user_id):
     contact = Contact.query.get(user_id)
 

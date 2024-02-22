@@ -4,4 +4,4 @@ Following a youtube channel
 
 ### Reference: https://www.youtube.com/watch?v=PppslXOR7TA
 
-### Time stamp: 10mins
+### Time stamp: 50mins
