@@ -27,12 +27,12 @@ const ContactForm = ({}) => {
       const data = await response.json();
       alert(data.message);
     } else {
-        // successful
+      // successful
     }
   };
 
   return (
-    <form action="">
+    <form onSubmit={onSubmit}>
       <div>
         <label htmlFor="firstName">First Name:</label>
         <input
